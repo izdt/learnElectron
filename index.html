@@ -8,17 +8,25 @@
   <body>
     <h1>Hello World!</h1>
 
-    <div id="app">
-      {{ message }}
-    </div>
+    <div id="app-4">
+        <ol>
+          <li v-for="todo in todos">
+            {{ todo.text }}
+          </li>
+        </ol>
+      </div>
     
   </body>
 
   <script>
-    var app = new Vue({
-      el: '#app',
+    const app4 = new Vue({
+      el: '#app-4',
       data: {
-        message: 'Hello Vue!'
+        todos: [
+          { text: 'Study JavaScript' },
+          { text: 'Study Vue' },
+          { text: 'hello world' }
+        ]
       }
     })
     // You can also require other files to run in this process
