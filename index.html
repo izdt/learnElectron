@@ -14,8 +14,8 @@
             {{ todo.text }}
           </li>
         </ol>
-      </div>
-    
+        <button v-on:click="reverseMessage">逆转消息</button>
+     </div>
   </body>
 
   <script>
@@ -27,6 +27,11 @@
           { text: 'Study Vue' },
           { text: 'hello world' }
         ]
+      },
+      methods:{
+        reverseMessage(){
+          app4.todos[0].text = app4.todos[0].text.split('').reverse().join('')
+        }
       }
     })
     // You can also require other files to run in this process
