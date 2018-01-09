@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>Hello World!</title>
     <script src="src/vue.js"></script>
+    <script src="src/testvue.js"></script>
   </head>
   <body>
     <h1>Hello World!</h1>
-
     <div id="app-4">
         <ol>
           <li v-for="todo in todos">
@@ -17,10 +17,15 @@
         <button v-on:click="reverseMessage">逆转消息</button>
         <input v-model="message">
         <p>{{ message }}</p>
-     </div>
+        <todo-item></todo-item>
+    </div>
   </body>
 
   <script>
+    Vue.component('todo-item', {
+        template: '<li>This is a todo item</li>'
+    })
+
     const app4 = new Vue({
       el: '#app-4',
       data: {
