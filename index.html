@@ -17,13 +17,14 @@
         <button v-on:click="reverseMessage">逆转消息</button>
         <input v-model="message">
         <p>{{ message }}</p>
-        <todo-item></todo-item>
+        <todo-item v-for="item in todos" v-bind:todo="item"></todo-item>
     </div>
   </body>
 
   <script>
     Vue.component('todo-item', {
-        template: '<li>This is a todo item</li>'
+        props: ['todo'],
+        template: '<li>{{todo.text}}</li>'
     })
 
     const app4 = new Vue({
